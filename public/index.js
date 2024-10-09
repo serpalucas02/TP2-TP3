@@ -1,25 +1,28 @@
 async function enviarFormulario(event) {
     event.preventDefault();
 
-    const nombre = document.getElementById('nombre').value;
-    const precio = document.getElementById('precio').value;
-    const stock = document.getElementById('stock').value;
+    const titulo = document.getElementById('titulo').value;
+    const autor = document.getElementById('autor').value;
+    const año = document.getElementById('año').value;
 
-    const respuesta = await fetch('/productos', {
+    const respuesta = await fetch('/libros', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ nombre, precio, stock })
+        body: JSON.stringify({ titulo, autor, año })
     });
 
     if (respuesta.ok) {
-        alert('Producto agregado correctamente');
-
-        document.getElementById('nombre').value = '';
-        document.getElementById('precio').value = '';
-        document.getElementById('stock').value = '';
+        alert('Libro agregado correctamente');
+        document.getElementById('titulo').value = '';
+        document.getElementById('autor').value = '';
+        document.getElementById('año').value = '';
     } else {
-        alert('Error al agregar producto');
+        alert('Error al agregar libro');
     }
+}
+
+function verLibros() {
+    window.location.href = '/libros';
 }

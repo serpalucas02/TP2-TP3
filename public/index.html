@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Libro</title>
     <link rel="stylesheet" href="index.css">
-    <title>Agregar Producto</title>
 </head>
     <body>
-        <h1>Agregar Producto</h1>
-        <form onsubmit="enviarFormulario(event)">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-
-            <label for="precio">Precio:</label>
-            <input type="number" id="precio" name="precio" step="0.01" required>
-
-            <label for="stock">Stock:</label>
-            <input type="number" id="stock" name="stock" required>
-
-            <button type="submit">Agregar Producto</button>
-        </form>
+        <div class="container">
+            <h1 class="title">Agregar Libro</h1>
+            <form onsubmit="enviarFormulario(event)">
+                <div class="form-group">
+                    <label class="label" for="titulo">Título:</label>
+                    <input class="input" type="text" id="titulo" name="titulo" required>
+                </div>
+                <div class="form-group">
+                    <label class="label" for="autor">Autor:</label>
+                    <input class="input" type="text" id="autor" name="autor" required>
+                </div>
+                <div class="form-group">
+                    <label class="label" for="año">Año:</label>
+                    <input class="input" type="number" id="año" name="año" required>
+                </div>
+                <button class="button" type="submit">Agregar Libro</button>
+            </form>
+            <button class="button-secondary" onclick="verLibros()">Ver Libros</button>
+        </div>
     </body>
     <script src="index.js"></script>
 </html>
